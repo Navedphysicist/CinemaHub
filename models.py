@@ -1,6 +1,6 @@
 from database import Base
 from sqlalchemy.orm import Mapped, mapped_column
-from sqlalchemy import String, Integer
+from sqlalchemy import String, Integer, Text
 
 
 class DbMovie(Base):
@@ -8,5 +8,5 @@ class DbMovie(Base):
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
     name: Mapped[str] = mapped_column(String(30))
-    details: Mapped[str] = mapped_column(String(300))
-    image_url: Mapped[str] = mapped_column(String(100))
+    details: Mapped[str] = mapped_column(Text)
+    image_url: Mapped[str] = mapped_column(String(255))
